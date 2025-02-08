@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Student</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<div class="bg-blue-800 text-white py-4 px-4 flex items-center space-x-6">
+    <h1 class="text-lg font-semibold">Student List</h1>
+    <a href="/" class="text-white hover:underline text-sm">Home</a>
+    <a href="/add-student" class="text-white hover:underline text-sm">Add Student</a>
+</div>
+
+<div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6 mt-6">
+    <h2 class="text-xl font-semibold text-center mb-6">Add New Student</h2>
+
+    <form th:action="@{/add-student}" method="post" class="space-y-4">
+        <div>
+            <label class="block text-gray-700 font-medium">Name</label>
+            <input type="text" name="name" required
+                   class="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div>
+            <label class="block text-gray-700 font-medium">Surname</label>
+            <input type="text" name="surname" required
+                   class="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div>
+            <label class="block text-gray-700 font-medium">Exam Score</label>
+            <input type="number" name="examScore" required
+                   class="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <button type="submit"
+                class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition">
+            Submit
+        </button>
+    </form>
+</div>
+
+</body>
+</html>
