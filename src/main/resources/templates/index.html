@@ -34,13 +34,16 @@
             </thead>
             <tbody>
             <tr th:each="student : ${students}" class="hover:bg-gray-100 text-sm"
-                th:classappend="${student.getMark() == 'F' ? 'text-red-600 font-bold' : ''}">
+                th:classappend="${student.mark == 'A' ? 'text-green-600 font-bold'
+                           : student.mark == 'F' ? 'text-red-600 font-bold'
+                           : '' }">
                 <td class="p-2 border" th:text="${student.id}"></td>
                 <td class="p-2 border" th:text="${student.name}"></td>
                 <td class="p-2 border" th:text="${student.surname}"></td>
                 <td class="p-2 border" th:text="${student.examScore}"></td>
-                <td class="p-2 border" th:text="${student.mark}"
-                    th:classappend="${student.getMark() == 'F' ? 'text-red-600 font-bold' : ''}"></td>
+                <td class="p-2 border" th:text="${student.mark}"></td>
+
+
             </tr>
             </tbody>
         </table>
